@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/styleForm1.css"/>
+    <link rel="stylesheet" href="css/styleForm.css"/>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -36,15 +36,47 @@
   <form class="row gy-2 gx-3 align-items-center">
   <div class="row">
     <div class="col">
-      <input type="text" class="form-control" placeholder="Nome" aria-label="First name">
+      <input type="text" class="form-control" placeholder="Nome" name="nome" id="nome">
     </div>
     <div class="col">
-      <input type="text" class="form-control" placeholder="Sobrenome" aria-label="Last name">
+      <input type="text" class="form-control" placeholder="Sobrenome" name="sobrenome" id="sobrenome">
     </div>  
+  </div>
+  <div class="row form">
+    <div class="col-md-3">
+      <input type="text" class="form-control" placeholder="Telefone 01" name="telefone1" id="telefone1">
+    </div>
+    <div class="col-md-3">
+    <select id="inputState" class="form-select">
+      <option>Tipo telefone 1</option>
+      <option>Comercial</option>
+      <option>Casa</option>
+      <option>Celular</option>
+      <option>Principal</option>
+    </select>
+  </div>
+  <div class="col-md-6">
+      <input type="text" class="form-control" placeholder="name@example.com" >
+    </div>
+    <div class="row form">
+    <div class="col-md-3">
+      <input type="text" class="form-control" placeholder="Telefone 02" name="telefone2" id="telefone2">
+    </div>
+    <div class="col-md-3">
+    <select id="inputState" class="form-select">
+      <option>Tipo telefone 2</option>
+      <option>Comercial</option>
+      <option>Casa</option>
+      <option>Celular</option>
+      <option>Principal</option>
+    </select>
 </div>
-  
+
+    <a type="button" class="btn btn-primary" href="formContato.php"> <i class="fa-solid fa-arrow-left"></i>Voltar</a>
 
 </div>
+</form>
+
 <script src="https://kit.fontawesome.com/8fd4fa4b09.js" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
