@@ -1,0 +1,24 @@
+h1{
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+.page{
+    width:90%;
+    margin: 0 auto;
+}
+.plus{
+    margin-right: 10px;
+}
+table{
+    font-size: 20px;
+}
+.red{
+    color:red;
+}
+.orange{
+    color: orange;
+}
+td{
+    font-size: 17px;
+}

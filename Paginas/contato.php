@@ -47,8 +47,8 @@
     </select>
   </div>
   <div class="col-auto">
-    <button type="button" class="btn btn-outline-success"> <i class="fa-solid fa-magnifying-glass plus"></i>Buscar</button>
-    <button type="submit" class="btn btn-primary"> <i class="fa-solid fa-plus plus"></i>Cadastrar</button>
+    <button type="submit" class="btn btn-outline-success"> <i class="fa-solid fa-magnifying-glass plus"></i>Buscar</button>
+    <a type="button" class="btn btn-primary" href="formContato.php"> <i class="fa-solid fa-plus plus"></i>Cadastrar</a>
   </div>
 </form>
 <table class="table table-hover">
