@@ -1,0 +1,9 @@
+.elementos{
+    display: flex;
+    justify-content: space-around;
+}
+.borda{
+    margin-left: 10px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
