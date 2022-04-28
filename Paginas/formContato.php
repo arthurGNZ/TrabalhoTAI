@@ -71,9 +71,10 @@
       <option>Principal</option>
     </select>
 </div>
-
-    <a type="button" class="btn btn-primary" href="formContato.php"> <i class="fa-solid fa-arrow-left"></i>Voltar</a>
-
+  <div class="botoes"> 
+    <button type="submit" class="btn btn-success"> <i class="fa-solid fa-floppy-disk plus"></i>Salvar</button>
+    <a type="button" class="btn btn-primary" href="contato.php"> <i class="fa-solid fa-arrow-left plus"></i>Voltar</a>
+  </div>
 </div>
 </form>
 
