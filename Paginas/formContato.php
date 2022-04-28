@@ -49,7 +49,7 @@
           <input type="text" class="form-control" placeholder="Telefone 01" name="telefone1" id="telefone1">
         </div>
         <div class="col-md-3">
-          <select id="inputState" class="form-select">
+          <select id="inputState" class="form-select" id="tipo_telelfone1" name="tipo_telefone1">
             <option >Tipo telefone 1</option>
             <option>Comercial</option>
             <option>Casa</option>
@@ -65,7 +65,7 @@
             <input type="text" class="form-control" placeholder="Telefone 02" name="telefone2" id="telefone2">
           </div>
           <div class="col-md-3">
-            <select id="inputState" class="form-select">
+            <select id="inputState" class="form-select" id="tipo_telelfone2" name="tipo_telefone2">
               <option>Tipo telefone 2</option>
               <option>Comercial</option>
               <option>Casa</option>

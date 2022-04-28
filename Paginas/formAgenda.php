@@ -37,41 +37,41 @@
         <form>
             <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">Título</label>
-                <input type="text" class="form-control" placeholder="Reuniões" id="" name="" >
+                <input type="text" class="form-control" placeholder="Reuniões" id="titulo" name="titulo" >
             </div>
             <div class="row">
                 <div class="col">
                     <label for="form-control" class="form-label">Data início</label>
-                    <input type="date" class="form-control" placeholder="First name">
+                    <input type="date" class="form-control" id="data_inicio" name="data_inicio">
                 </div>
                 <div class="col">
                     <label for="form-control" class="form-label">Hora início</label>
-                    <input type="time" class="form-control" placeholder="Last name">
+                    <input type="time" class="form-control" id="hora_inicio" name="hora_inicio">
                 </div>
             </div>
             <div class="row">
                 <div class="col">
                     <label for="form-control" class="form-label cabeca">Data fim</label>
-                    <input type="date" class="form-control">
+                    <input type="date" class="form-control" id="data_fim" name="data_fim">
                 </div>
                 <div class="col">
                     <label for="form-control" class="form-label cabeca">Hora fim</label>
-                    <input type="time" class="form-control">
+                    <input type="time" class="form-control" id="hora_fim" name="hora_fim">
                 </div>
             </div>
             <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label cabeca">Local</label>
-                <input type="text" class="form-control" placeholder="Rua João Machado...">
+                <input type="text" class="form-control" placeholder="Rua João Machado..." id="local" name="local"/>
             </div>
             <div class="col-md-12">
                 <label for="formGroupExampleInput" class="form-label">Contato convidado</label>
-                <select id="inputState" class="form-select">
+                <select id="inputState" class="form-select" id="convidado_id" name="convidado_id">
                     <option></option>
                 </select>
             </div>
             <label for="textarea">Descrição</label>
             <div class="form-floating">
-                <textarea class="form-control" id="floatingTextarea2" style="height: 100px"></textarea>
+                <input type="text" class="form-control" id="floatingTextarea2" style="height: 100px" id="descricao" name="descricao"></textarea>
                 <label for="floatingTextarea2">Ponto de referência...</label>
             </div>
             <div class="botoes">
