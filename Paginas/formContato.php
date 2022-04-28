@@ -1,3 +1,4 @@
+<?php include "database/bd.php" ?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -35,7 +36,7 @@
 
   <div class="page">
     <h1> Formulário Contato</h1>
-    <form class="row gy-2 gx-3 align-items-center">
+    <form class="row gy-2 gx-3 align-items-center" action="./resultado.php" method="get">
       <div class="row">
         <div class="col">
           <input type="text" class="form-control" placeholder="Nome" name="nome" id="nome">
@@ -49,23 +50,23 @@
           <input type="text" class="form-control" placeholder="Telefone 01" name="telefone1" id="telefone1">
         </div>
         <div class="col-md-3">
-          <select id="inputState" class="form-select" id="tipo_telelfone1" name="tipo_telefone1">
-            <option >Tipo telefone 1</option>
-            <option>Comercial</option>
-            <option>Casa</option>
-            <option>Celular</option>
-            <option>Principal</option>
+          <select id="inputState" class="form-select" id="tipo_tel1" name="tipo_tel1">
+            <option>Tipo telefone 1</option>
+            <option value="Comercial">Comercial</option>
+            <option value="Casa">Casa</option>
+            <option value="Celular">Celular</option>
+            <option value="Principal">Principal</option>
           </select>
         </div>
         <div class="col-md-6">
-          <input type="email" class="form-control" placeholder="name@example.com">
+          <input type="email" class="form-control" placeholder="name@example.com" name="email" id="email">
         </div>
         <div class="row form">
           <div class="col-md-3">
             <input type="text" class="form-control" placeholder="Telefone 02" name="telefone2" id="telefone2">
           </div>
           <div class="col-md-3">
-            <select id="inputState" class="form-select" id="tipo_telelfone2" name="tipo_telefone2">
+            <select id="inputState" class="form-select" id="tipo_tel2" name="tipo_tel2">
               <option>Tipo telefone 2</option>
               <option>Comercial</option>
               <option>Casa</option>
@@ -74,12 +75,11 @@
             </select>
           </div>
           <div class="botoes">
-            <button type="submit" class="btn btn-success"> <i class="fa-solid fa-floppy-disk plus"></i>Salvar</button>
+            <button type="submit" value="Inserir" class="btn btn-success"> <i class="fa-solid fa-floppy-disk plus"></i>Salvar</button>
             <a type="button" class="btn btn-primary" href="contato.php"> <i class="fa-solid fa-arrow-left plus"></i>Voltar</a>
           </div>
         </div>
     </form>
-
     <script src="https://kit.fontawesome.com/8fd4fa4b09.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 </body>
