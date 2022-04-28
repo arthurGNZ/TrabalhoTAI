@@ -1,0 +1,18 @@
+.page{
+    width:70%;
+    margin: 0 5%;
+}
+h1{
+    font-size: 30px;
+    margin-top: 10px;
+    margin-bottom: 12px;
+}
+.cabeca{
+    margin-top: 10px;
+}
+.plus{
+    margin-right: 10px;
+}
+.botoes{
+    margin-top: 10px;
+}

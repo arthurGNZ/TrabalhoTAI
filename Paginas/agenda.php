@@ -48,7 +48,7 @@
   </div>
   <div class="col-auto">
     <button type="submit" class="btn btn-outline-success"> <i class="fa-solid fa-magnifying-glass plus"></i>Buscar</button>
-    <a type="button" class="btn btn-primary" href="#"> <i class="fa-solid fa-plus plus"></i>Cadastrar</a>
+    <a type="button" class="btn btn-primary" href="formAgenda.php"> <i class="fa-solid fa-plus plus"></i>Cadastrar</a>
   </div>
 </form>
 <table class="table table-hover">
