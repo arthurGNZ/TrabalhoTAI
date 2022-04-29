@@ -61,11 +61,10 @@
         <div class="col-md-6">
           <input type="email" class="form-control" placeholder="name@example.com" name="email" id="email">
         </div>
-        <div class="row form">
-          <div class="col-md-3">
+          <div class="col-md-3 form">
             <input type="text" class="form-control" placeholder="Telefone 02" name="telefone2" id="telefone2">
           </div>
-          <div class="col-md-3">
+          <div class="col-md-3 form">
             <select id="inputState" class="form-select" id="tipo_tel2" name="tipo_tel2">
               <option>Tipo telefone 2</option>
               <option>Comercial</option>
@@ -78,7 +77,7 @@
             <button type="submit" value="Inserir" class="btn btn-success"> <i class="fa-solid fa-floppy-disk plus"></i>Salvar</button>
             <a type="button" class="btn btn-primary" href="contato.php"> <i class="fa-solid fa-arrow-left plus"></i>Voltar</a>
           </div>
-        </div>
+       
     </form>
     <script src="https://kit.fontawesome.com/8fd4fa4b09.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
