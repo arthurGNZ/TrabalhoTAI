@@ -1,4 +1,26 @@
-<?php include "database/bd.php" ?>
+<?php include "database/bd.php";
+$objBD = new BD();
+if(!empty($_POST['nome'])){
+     $dados = [
+      'id' => $_POST['id'],
+      'nome' => $_POST['nome'],
+      'sobrenome' => $_POST['sobrenome'],
+      'telefone1' => $_POST['telefone1'],
+      'tipo_tel1' => $_POST['tipo_tel1'],
+      'telefone2' => $_POST['telefone2'],
+      'tipo_tel2' => $_POST['tipo_tel2'],
+      'email' => $_POST['email']];
+    if(!empty($_GET['id'])){
+      $objBD->update($dados);
+    }else{
+      $objBD->insert($dados);
+    }
+    
+    header("location:contato.php");
+  }elseif(!empty($_GET['id'])){
+    $result=$objBD->find($_GET['id']);
+  } 
+?>
 <!DOCTYPE html>
 <html lang="en">
 
@@ -40,21 +62,22 @@
 
   <div class="page">
     <h1> Formulário Contato</h1>
-    <form class="row gy-2 gx-3 align-items-center" action="./resultado.php" method="get">
+    <form class="row gy-2 gx-3 align-items-center" action="formContato.php" method="post">
+      <input type="hidden" name="id" value="<?php echo !empty($result->id)? $result->id:"";?>">
       <div class="row">
         <div class="col">
-          <input type="text" class="form-control" placeholder="Nome" name="nome" id="nome">
+          <input type="text" class="form-control" placeholder="Nome" name="nome" id="nome" value="<?php echo !empty($result->nome)? $result->nome:"";?>">
         </div>
         <div class="col">
-          <input type="text" class="form-control" placeholder="Sobrenome" name="sobrenome" id="sobrenome">
+          <input type="text" class="form-control" placeholder="Sobrenome" name="sobrenome" id="sobrenome" value="<?php echo !empty($result->sobrenome)? $result->sobrenome:"";?>">
         </div>
       </div>
       <div class="row form">
         <div class="col-md-3">
-          <input type="text" class="form-control" placeholder="Telefone 01" name="telefone1" id="telefone1">
+          <input type="text" class="form-control" placeholder="Telefone 01" name="telefone1" id="telefone1" value="<?php echo !empty($result->telefone1)? $result->telefone1:"";?>">
         </div>
         <div class="col-md-3">
-          <select id="inputState" class="form-select" id="tipo_tel1" name="tipo_tel1">
+          <select id="inputState" class="form-select" id="tipo_tel1" name="tipo_tel1" >
             <option>Tipo telefone 1</option>
             <option value="Comercial">Comercial</option>
             <option value="Casa">Casa</option>
@@ -63,10 +86,10 @@
           </select>
         </div>
         <div class="col-md-6">
-          <input type="email" class="form-control" placeholder="name@example.com" name="email" id="email">
+          <input type="email" class="form-control" placeholder="name@example.com" name="email" id="email" value="<?php echo !empty($result->email)? $result->email:"";?>">
         </div>
           <div class="col-md-3 form">
-            <input type="text" class="form-control" placeholder="Telefone 02" name="telefone2" id="telefone2">
+            <input type="text" class="form-control" placeholder="Telefone 02" name="telefone2" id="telefone2" value="<?php echo !empty($result->telefone2)? $result->telefone2:"";?>">
           </div>
           <div class="col-md-3 form">
             <select id="inputState" class="form-select" id="tipo_tel2" name="tipo_tel2">

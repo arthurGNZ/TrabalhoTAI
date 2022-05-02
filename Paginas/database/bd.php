@@ -24,19 +24,49 @@ class BD{
         return $st;
     }
     public function insert($dados){
-        $sql = "INSERT INTO crudcontato(nome, sobrenome, telefone1, tipo_tel1, telefone2, tipo_tel2, email) VALUES(";
+        unset($dados['id']);
+        $sql = "INSERT INTO crudcontato (nome, sobrenome, telefone1, tipo_tel1, telefone2, tipo_tel2, email) VALUES(";
         $flag = 0;
+        $arrayValor = [];
+        foreach($dados as $valor){
+            if($flag==0){
+                $sql .= " ?";
+            }else { 
+                $sql .=", ?";}
+            $flag=1;
+            $arrayValor[]=$valor;
+            }
+        $sql.=");";
+        $conn = $this->conn();
+        $stmt = $conn->prepare($sql);
+        $stmt->execute($arrayValor);
+            
+        return $stmt;
+        }  
+    public function find($id){
+        $conn = $this->conn();
+        $stmt = $conn->prepare("SELECT * FROM crudcontato WHERE id=?;");
+        $stmt->execute([$id]);
+        return $stmt->fetchObject();//retornando os dados como objeto -> fica mais fácil para acessar
+    }
+
+    public function update($dados){
+        $id = $dados['id'];
+        $sql = "UPDATE crudcontato SET ";
+        $flag = 0;
+        $arrayValor = [];
         foreach($dados as $campo => $valor){
             if($flag==0){
-                $sql .= "'$valor'";
-                $flag=1;
-            }else { $sql .=", '$valor'";}
-            }
-            $sql.=")";
+                $sql .= "$campo = ?";
+            }else { $sql .=", $campo = ?";}
+            $flag=1;    
+            $arrayValor[]= $valor;
+        }
+            $sql.="WHERE id = $id;";
 
             $conn = $this->conn();
             $stmt = $conn->prepare($sql);
-            $stmt->execute();
+            $stmt->execute($arrayValor);
             
             return $stmt;
         }  

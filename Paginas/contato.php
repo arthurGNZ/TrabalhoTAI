@@ -86,8 +86,8 @@
       <td>".$item['telefone2']."</td>
       <td>".$item['tipo_tel2']."</td>
       <td>".$item['email']."</td>
-      <td><i class='fa-solid fa-pen-to-square orange'></i></td>
-      <td><i class='fa-solid fa-trash red'></i></td>
+      <td><a href='formContato.php?id=".$item['id']."'><i class='fa-solid fa-pen-to-square orange'></i><a></td>
+      <td><i class='fa-solid fa-trash red'</i></td>
     </tr>
   </tbody>";
 }
