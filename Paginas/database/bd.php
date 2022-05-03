@@ -70,5 +70,12 @@ class BD{
             
             return $stmt;
         }  
+    
+    public function remove($id){
+        $conn = $this->conn();
+        $stmt = $conn->prepare("DELETE FROM crudcontato WHERE id=?;");
+        $stmt->execute([$id]);
+        return $stmt;
+    }
     }
 ?>

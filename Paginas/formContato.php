@@ -11,11 +11,11 @@ if(!empty($_POST['nome'])){
       'tipo_tel2' => $_POST['tipo_tel2'],
       'email' => $_POST['email']];
     if(!empty($_GET['id'])){
-      $objBD->update($dados);
-    }else{
       $objBD->insert($dados);
+      
+    }else{
+      $objBD->update($dados);// O comando daqui é o que funciona 
     }
-    
     header("location:contato.php");
   }elseif(!empty($_GET['id'])){
     $result=$objBD->find($_GET['id']);

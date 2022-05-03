@@ -1,4 +1,11 @@
-<?php include "database/bd.php"?>
+<?php include "database/bd.php";
+$objBD = new BD();
+$result = $objBD->select();
+if(!empty($_GET['id'])){
+  $objBD->remove($_GET['id']);
+  header("location:contato.php");
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -87,7 +94,7 @@
       <td>".$item['tipo_tel2']."</td>
       <td>".$item['email']."</td>
       <td><a href='formContato.php?id=".$item['id']."'><i class='fa-solid fa-pen-to-square orange'></i><a></td>
-      <td><i class='fa-solid fa-trash red'</i></td>
+      <td><a href='contato.php?id=".$item['id']."'><i class='fa-solid fa-trash red'</i></a></td>
     </tr>
   </tbody>";
 }
