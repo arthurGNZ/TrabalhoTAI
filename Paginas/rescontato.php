@@ -11,9 +11,11 @@ if(!empty($_POST['nome'])){
       'tipo_tel2' => $_POST['tipo_tel2'],
       'email' => $_POST['email']
     ];
-    $objBD->insert($dados);
+    $objBD->update($dados);
     header("location:contato.php");
-  }
+  }elseif(!empty($_GET['id'])){
+    $result=$objBD->find($_GET['id']);
+  } 
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -56,7 +58,7 @@ if(!empty($_POST['nome'])){
 
   <div class="page">
     <h1> Formulário Contato</h1>
-    <form class="row gy-2 gx-3 align-items-center" action="formContato.php" method="post">
+    <form class="row gy-2 gx-3 align-items-center" action="rescontato.php" method="post">
       <input type="hidden" name="id" value="<?php echo !empty($result->id)? $result->id:"";?>">
       <div class="row">
         <div class="col">
@@ -72,11 +74,11 @@ if(!empty($_POST['nome'])){
         </div>
         <div class="col-md-3">
           <select id="inputState" class="form-select" id="tipo_tel1" name="tipo_tel1" >
-            <option>Tipo telefone 1</option>
-            <option value="Comercial">Comercial</option>
-            <option value="Casa">Casa</option>
-            <option value="Celular">Celular</option>
-            <option value="Principal">Principal</option>
+            <option><?php echo $result->tipo_tel1;?></option>
+            <?php if($result->tipo_tel1!="Comercial"){echo "<option value='Comercial'>Comercial</option>";}?>
+            <?php if($result->tipo_tel1!="Casa"){echo "<option value='Casa'>Casa</option>";}?>
+            <?php if($result->tipo_tel1!="Celular"){echo "<option value='Celular'>Celular</option>";}?>
+            <?php if($result->tipo_tel1!="Principal"){echo "<option value='Principal'>Principal</option>";}?>
           </select>
         </div>
         <div class="col-md-6">
@@ -87,11 +89,11 @@ if(!empty($_POST['nome'])){
           </div>
           <div class="col-md-3 form">
             <select id="inputState" class="form-select" id="tipo_tel2" name="tipo_tel2">
-              <option>Tipo telefone 2</option>
-              <option>Comercial</option>
-              <option>Casa</option>
-              <option>Celular</option>
-              <option>Principal</option>
+            <option><?php echo $result->tipo_tel2;?></option>
+            <?php if($result->tipo_tel2!="Comercial"){echo "<option value='Comercial'>Comercial</option>";}?>
+            <?php if($result->tipo_tel2!="Casa"){echo "<option value='Casa'>Casa</option>";}?>
+            <?php if($result->tipo_tel2!="Celular"){echo "<option value='Celular'>Celular</option>";}?>
+            <?php if($result->tipo_tel2!="Principal"){echo "<option value='Principal'>Principal</option>";}?>
             </select>
           </div>
           <div class="botoes">

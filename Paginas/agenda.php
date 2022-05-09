@@ -1,3 +1,10 @@
+<?php include "database/bdAgenda.php";
+$objBD = new BD();
+$result = $objBD->select();
+if(!empty($_GET['id'])){
+  $objBD->remove($_GET['id']);
+}
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,36 +62,44 @@
     <a type="button" class="btn btn-primary" href="formAgenda.php"> <i class="fa-solid fa-plus plus"></i>Cadastrar</a>
   </div>
 </form>
-<table class="table table-hover">
+<?php
+ $objBD = new BD();
+ $objBD->conn(); //abre a conexão,
+ $result = $objBD->select(); // retorna um array com os dados do bd
+  echo "  
+  <table class='table table-hover'>
   <thead>
     <tr>
-      <th scope="col">#</th>
-      <th scope="col">Título</th>
-      <th scope="col">Data início</th>
-      <th scope="col">Hora início</th>
-      <th scope="col">Data fim</th>
-      <th scope="col">Hora fim</th>
-      <th scope="col">Local</th>
-      <th scope="col">Convidado</th>
-      <th scope="col">Ação</th>
-      <th scope="col">Ação</th>
-    </tr>
+      <th scope='col'>#</th>
+      <th scope='col'>Título</th>
+      <th scope='col'>Data início</th>
+      <th scope='col'>Hora início</th>
+      <th scope='col'>Data fim</th>
+      <th scope='col'>Hora fim</th>
+      <th scope='col'>Local</th>
+      <th scope='col'>Descriçao</th>
+      <th scope='col'>Ação</th>
+      <th scope='col'>Ação</th>
+    </tr>";
+  foreach($result as $item){
+  echo "
   </thead>
   <tbody>
     <tr>
-      <th scope="row">1</th>
-      <td>Reunião com o chefe</td>
-      <td>14/04/2022</td>
-      <td>8:35 AM</td>
-      <td>14/04/2022</td>
-      <td>10:00 AM</td>
-      <td>Gabinete Gerencial, Rua ABC</td>
-      <td>Arthur</td>
-      <td><i class="fa-solid fa-pen-to-square orange"></i></td>
-      <td><i class="fa-solid fa-trash red"></i></td>
+      <th scope='row'>".$item['id']."</th>
+      <td>".$item['titulo']."</td>
+      <td>".$item['data_inicio']."</td>
+      <td>".$item['hora_inicio']."</td>
+      <td>".$item['data_fim']."</td>
+      <td>".$item['hora_fim']."</td>
+      <td>".$item['localizacao']."</td>
+      <td>".$item['descricao']."</td>
+      <td><a href='resagenda.php?id=".$item['id']."'><i class='fa-solid fa-pen-to-square orange'></i><a></td>
+      <td><a href='agenda.php?id=".$item['id']."'><i class='fa-solid fa-trash red'</i></a></td>
     </tr>
-  </tbody>
-</table>
+  </tbody>";}
+echo "</table>";
+?>
 </div>
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>

@@ -12,8 +12,10 @@ if (!empty($_POST['titulo'])) {
         'descricao' => $_POST['descricao'],
         'convidado_id' => $_POST['convidado_id']
     ];
-       $objBD->insert($dados);
+    $objBD->update($dados);
     header("location:agenda.php");
+} elseif (!empty($_GET['id'])) {
+    $result = $objBD->find($_GET['id']);
 }
 ?>
 <!DOCTYPE html>
@@ -56,7 +58,7 @@ if (!empty($_POST['titulo'])) {
     </nav>
     <div class="page">
         <h1>Formulário Agenda</h1>
-        <form action="formAgenda.php" method="post">
+        <form action="resagenda.php" method="post">
             <input type="hidden" name="id" value="<?php echo !empty($result->id) ? $result->id : ""; ?>">
             <div class="mb-3">
                 <label for="formGroupExampleInput" class="form-label">Título</label>
@@ -92,8 +94,7 @@ if (!empty($_POST['titulo'])) {
             $result = $objBD->convidadoID();
             echo "<div class='col-md-12'>
                 <label for='formGroupExampleInput' class='form-label'>Contato convidado</label>
-                <select id='inputState' class='form-select' id='convidado_id' name='convidado_id'>
-                <option></option>";
+                <select id='inputState' class='form-select' id='convidado_id' name='convidado_id'>";
             foreach ($result as $item) {
                 echo "<option value=" . $item['id'] . ">" . $item['nome'] . "</option>";
             }
