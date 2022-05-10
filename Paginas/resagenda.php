@@ -104,7 +104,7 @@ if (!empty($_POST['titulo'])) {
             <label for="textarea">Descrição</label>
             <div class="form-floating">
                 <input type="text" class="form-control" id="floatingTextarea2" style="height: 100px" id="descricao" name="descricao" value="<?php echo !empty($result->descricao) ? $result->descricao : ""; ?>"></textarea>
-                <label for="floatingTextarea2">Ponto de referência...</label>
+                <label for="floatingTextarea2" >Ponto de referência...</label>
             </div>
             <div class="botoes">
                 <button type="submit" class="btn btn-success"> <i class="fa-solid fa-floppy-disk plus"></i>Salvar</button>
