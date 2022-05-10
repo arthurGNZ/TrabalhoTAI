@@ -97,7 +97,7 @@ if (!empty($_GET['id'])) {
       <td>" . $item['tipo_tel2'] . "</td>
       <td>" . $item['email'] . "</td>
       <td><a href='rescontato.php?id=" . $item['id'] . "'><i class='fa-solid fa-pen-to-square orange'></i><a></td>
-      <td><a href='contato.php?id=" . $item['id'] . "'><i class='fa-solid fa-trash red'</i></a></td>
+      <td><a href='contato.php?id=". $item['id'] ."'><i class='fa-solid fa-trash red'</i></a></td>
     </tr>
   </tbody>";
         }
